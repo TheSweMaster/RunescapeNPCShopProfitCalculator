@@ -1,0 +1,42 @@
+﻿@model RunescapeNPCShopCalculator.Models.ShopItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShopItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Item)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Item)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisplayPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DefaultStock)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

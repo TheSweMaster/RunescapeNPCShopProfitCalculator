@@ -1,0 +1,91 @@
+﻿@model RunescapeNPCShopCalculator.Models.ShopDetail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShopDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Members)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Members)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Shopkeeper)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Shopkeeper)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            <br />----- Shop Item
+        </dt>
+        <dd>
+            <br /><b>Details -----</b>
+        </dd>
+        @foreach (var shopItem in Model.ShopItems)
+    {
+        <dt>
+           ItemName
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => shopItem.Item)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => shopItem.DisplayPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => shopItem.DisplayPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => shopItem.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => shopItem.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => shopItem.DefaultStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => shopItem.DefaultStock)
+        </dd>
+        <dd>
+            <br />
+        </dd>
+}
+    </dl>
+</div>
+@*<div>
+    @foreach (var item in Model.ShopItems)
+    {
+        <div>@item.Item</div>
+    }
+</div>*@
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
